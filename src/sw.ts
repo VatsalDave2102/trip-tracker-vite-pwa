@@ -57,7 +57,6 @@ const bgSyncPlugin = new BackgroundSyncPlugin("background-sync", {
 					icon: "/favicon.svg",
 					dir: "ltr",
 					lang: "en-US",
-					vibrate: [100, 50, 200],
 					badge: "/favicon.svg",
 				};
 
@@ -71,7 +70,6 @@ const bgSyncPlugin = new BackgroundSyncPlugin("background-sync", {
 					icon: "/favicon.svg",
 					dir: "ltr",
 					lang: "en-US",
-					vibrate: [100, 50, 200],
 					badge: "/favicon.svg",
 				};
 
