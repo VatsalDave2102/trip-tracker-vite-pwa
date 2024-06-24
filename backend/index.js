@@ -7,6 +7,7 @@ const express = require("express"); // Express framework
 const webpush = require("web-push"); // Web Push API
 const admin = require("firebase-admin"); // Firebase Admin SDK
 const { Storage } = require("@google-cloud/storage"); // Google Cloud Storage
+const { applicationDefault } = require("firebase-admin/app");
 
 require("dotenv").config(); // load environment variables from.env file
 
@@ -26,10 +27,10 @@ const gcs = new Storage(gconfig);
 
 // initialize firebase admin
 if (!admin.apps.length) {
-	const serviceAccount = require(`./${process.env.FIREBASE_ADMIN_KEY_FILE}`);
+	const serviceAccount = require(process.env.GOOGLE_APPLICATION_CREDENTIALS);
 
 	admin.initializeApp({
-		credential: admin.credential.cert(serviceAccount),
+		credential: admin.credential.cert(serviceAccount) || applicationDefault(),
 		databaseURL: process.env.DATABASE_URL,
 	});
 }
