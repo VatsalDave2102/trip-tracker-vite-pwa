@@ -62,22 +62,8 @@ export const displayConfirmNotification = async () => {
 			icon: "/favicon.svg",
 			dir: "ltr",
 			lang: "en-US",
-			vibrate: [100, 50, 200],
 			badge: "/favicon.svg",
 			tag: "confirm-notification",
-			renotify: true,
-			actions: [
-				{
-					action: "confirm",
-					title: "Okay",
-					icon: "/favicon.svg",
-				},
-				{
-					action: "cancel",
-					title: "Cancel",
-					icon: "/favicon.svg",
-				},
-			],
 		};
 
 		const swreg = await navigator.serviceWorker.ready;
