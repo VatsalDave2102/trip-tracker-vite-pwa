@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 import Navbar from "@/components/navbar/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 export let installPrompt: Event | null;
 
 const Root = () => {
@@ -8,6 +9,7 @@ const Root = () => {
 		<div>
 			<Navbar />
 			<Outlet />
+			<Toaster />
 		</div>
 	);
 };

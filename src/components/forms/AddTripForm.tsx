@@ -111,11 +111,14 @@ const AddTripForm = () => {
 				// Reset the form and navigate to the trips page on success
 				reset();
 				navigate("/trips");
-			} else {
-				// Display an error message on failure
-				toast({ title: "Failed to store post", description: response.status });
 			}
 		} catch (error) {
+			// Display an error message on failure
+			toast({
+				title: "Failed to store post",
+				description: "Will sync later in background",
+				variant: "destructive",
+			});
 			console.log(error);
 		}
 	};
